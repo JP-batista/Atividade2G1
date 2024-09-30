@@ -61,42 +61,45 @@ const Page: React.FC = () => {
   };
 
   return (
-    <main>
-      <h2>{editingId ? 'Editar' : 'Adicionar'} Produção</h2>
-      <div>
-        <select name="tipo" value={formData.tipo} onChange={handleChange}>
-          <option value="Filme">Filme</option>
-          <option value="Série">Série</option>
-        </select>
-        <input type="text" name="titulo" placeholder="Título" value={formData.titulo || ''} onChange={handleChange} />
-        <input type="number" name="ano" placeholder="Ano" value={formData.ano || ''} onChange={handleChange} />
-        <input type="text" name="genero" placeholder="Gênero" value={formData.genero || ''} onChange={handleChange} />
-        <textarea name="sinopse" placeholder="Sinopse" value={formData.sinopse || ''} onChange={handleChange} />
-        {formData.tipo === 'Filme' ? (
-          <input type="number" name="duracao" placeholder="Duração (min)" value={formData.duracao || ''} onChange={handleChange} />
-        ) : (
-          <input type="number" name="temporadas" placeholder="Temporadas" value={formData.temporadas || ''} onChange={handleChange} />
-        )}
-        <input type="number" name="avaliacao" placeholder="Avaliação (0-5)" value={formData.avaliacao || ''} onChange={handleChange} min="0" max="5" />
-        <button onClick={handleSubmit}>{editingId ? 'Salvar' : 'Adicionar'}</button>
+    <main style={{ display: 'flex', justifyContent: 'space-between', padding: '20px' }}>
+      <div style={{ flex: '1', marginRight: '20px' }}>
+        <h2>{editingId ? 'Editar' : 'Adicionar'} Produção</h2>
+        <div className="form-container">
+          <select name="tipo" value={formData.tipo} onChange={handleChange}>
+            <option value="Filme">Filme</option>
+            <option value="Série">Série</option>
+          </select>
+          <input type="text" name="titulo" placeholder="Título" value={formData.titulo || ''} onChange={handleChange} />
+          <input type="number" name="ano" placeholder="Ano" value={formData.ano || ''} onChange={handleChange} />
+          <input type="text" name="genero" placeholder="Gênero" value={formData.genero || ''} onChange={handleChange} />
+          <textarea name="sinopse" placeholder="Sinopse" value={formData.sinopse || ''} onChange={handleChange} />
+          {formData.tipo === 'Filme' ? (
+            <input type="number" name="duracao" placeholder="Duração (min)" value={formData.duracao || ''} onChange={handleChange} />
+          ) : (
+            <input type="number" name="temporadas" placeholder="Temporadas" value={formData.temporadas || ''} onChange={handleChange} />
+          )}
+          <input type="number" name="avaliacao" placeholder="Avaliação (0-5)" value={formData.avaliacao || ''} onChange={handleChange} min="0" max="5" />
+          <button onClick={handleSubmit}>{editingId ? 'Salvar' : 'Adicionar'}</button>
+        </div>
       </div>
-      <h2>Lista de Produções</h2>
-      <ul>
-        {producoes.length > 0 ? (
-          producoes.map(producao => (
-            <li key={producao.id} style={{ marginBottom: '20px' }}>
-              <strong>{producao.titulo}</strong> ({producao.tipo}, {producao.ano})
-              <p>{producao.sinopse}</p>
-              <p>Avaliação: {producao.avaliacao}/5</p>
-              <button onClick={() => handleEdit(producao.id)}>Editar</button>
-              <button onClick={() => handleDelete(producao.id)} style={{ marginLeft: '10px', backgroundColor: 'red', color: 'white' }}>Excluir</button>
-              <hr />
-            </li>
-          ))
-        ) : (
-          <p>Nenhuma produção adicionada ainda.</p>
-        )}
-      </ul>
+      <div style={{ flex: '1' }}>
+        <h2>Lista de Produções</h2>
+        <ul className="producoes-list">
+          {producoes.length > 0 ? (
+            producoes.map(producao => (
+              <li key={producao.id} className="producoes-item">
+                <strong>{producao.titulo}</strong> ({producao.tipo}, {producao.ano}) 
+                <p>{producao.sinopse}</p>
+                <p>Avaliação: {producao.avaliacao}/5</p>
+                <button onClick={() => handleEdit(producao.id)}>Editar</button>
+                <button onClick={() => handleDelete(producao.id)} className="delete-button">Excluir</button>
+              </li>
+            ))
+          ) : (
+            <p>Nenhuma produção adicionada ainda.</p>
+          )}
+        </ul>
+      </div>
     </main>
   );
 };

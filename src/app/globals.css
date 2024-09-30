@@ -1,77 +1,140 @@
-/* app/globals.css */
-
-body {
-  font-family: Arial, sans-serif;
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background-color: #f0f0f0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f0f4f8;
+  color: #333;
 }
 
 .container {
-  width: 80%;
-  margin: 0 auto;
+  width: 90%;
+  max-width: 1200px;
+  margin: 20px auto;
   padding: 20px;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .header {
+  max-width: 1200px;
+  margin: 20px auto;
   background-color: #0070f3;
-  color: #fff;
-  padding: 15px 20px;
+  color: #ffffff;
+  padding: 30px;
   text-align: center;
-  border-radius: 8px 8px 0 0;
+  border-radius: 12px 12px 12px 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
-  margin: 0;
+  font-size: 2.5em;
+}
+
+h2 {
+  color: #0070f3;
+  font-size: 1.8em;
+  margin: 20px 0;
+  border-bottom: 2px solid #0070f3;
+  padding-bottom: 10px;
 }
 
 button {
   background-color: #0070f3;
   color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 12px 20px;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 6px;
   margin-top: 10px;
   font-size: 16px;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 button:hover {
   background-color: #005bb5;
+  transform: translateY(-2px);
 }
 
 input,
 select,
 textarea {
   width: 100%;
-  margin: 5px 0 15px;
-  padding: 10px;
+  margin: 10px 0;
+  padding: 12px;
   border: 1px solid #ddd;
-  border-radius: 5px;
-  font-size: 16px; /* Define um tamanho de fonte consistente */
-  box-sizing: border-box; /* Garantir que padding não afete o tamanho */
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #0070f3;
+  outline: none;
 }
 
 input[type='number']::-webkit-outer-spin-button,
 input[type='number']::-webkit-inner-spin-button {
-  -webkit-appearance: none; /* Remover as setas em navegadores WebKit */
-  margin: 0; /* Garantir que a margem não seja aplicada */
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 select {
-  background-color: #fff; /* Garantir que o fundo seja branco */
-  cursor: pointer; /* Mostrar que o select é clicável */
+  background-color: #fff;
+  cursor: pointer;
 }
 
 textarea {
-  resize: vertical; /* Permitir redimensionamento vertical */
+  resize: vertical;
+  height: 100px;
 }
 
 ul {
   list-style-type: none;
   padding: 0;
+}
+
+.producoes-list {
+  margin-top: 20px;
+}
+
+.producoes-item {
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 6px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.100);
+  margin-bottom: 15px;
+  transition: transform 0.2s ease;
+}
+
+.producoes-item:hover {
+  transform: translateY(-5px);
+}
+
+.delete-button {
+  margin-left: 10px;
+  background-color: #e74c3c;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.delete-button:hover {
+  background-color: #c0392b;
+}
+
+.producoes-item p {
+  margin-bottom: 8px; 
+}
+
+.titulo p {
+  margin-bottom: 8px; 
 }
