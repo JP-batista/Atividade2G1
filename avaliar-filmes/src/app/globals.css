@@ -1,0 +1,77 @@
+/* app/globals.css */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  background-color: #0070f3;
+  color: #fff;
+  padding: 15px 20px;
+  text-align: center;
+  border-radius: 8px 8px 0 0;
+}
+
+h1 {
+  margin: 0;
+}
+
+button {
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #005bb5;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  margin: 5px 0 15px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px; /* Define um tamanho de fonte consistente */
+  box-sizing: border-box; /* Garantir que padding não afete o tamanho */
+}
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none; /* Remover as setas em navegadores WebKit */
+  margin: 0; /* Garantir que a margem não seja aplicada */
+}
+
+select {
+  background-color: #fff; /* Garantir que o fundo seja branco */
+  cursor: pointer; /* Mostrar que o select é clicável */
+}
+
+textarea {
+  resize: vertical; /* Permitir redimensionamento vertical */
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
